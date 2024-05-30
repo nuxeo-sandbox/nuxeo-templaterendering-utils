@@ -1,0 +1,9 @@
+Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: .
+Manifest-Version: 1.0
+Bundle-Vendor: org.nuxeo.labs.templaterendering.utils
+Bundle-Version: 1.0.0
+Bundle-Name: nuxeo-templaterendering-utils-core
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: org.nuxeo.labs.templaterendering.utils.nuxeo-templaterendering-utils-core;singleton=true
+Nuxeo-Component: OSGI-INF/template-processor-contrib.xml

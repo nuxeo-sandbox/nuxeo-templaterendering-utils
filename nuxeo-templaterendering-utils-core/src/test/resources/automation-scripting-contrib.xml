@@ -1,0 +1,112 @@
+<?xml version="1.0"?>
+<component name="nuxeo-labs-automation-helpers-test-tot">
+
+  <extension target="org.nuxeo.automation.scripting.internals.AutomationScriptingComponent" point="operation">
+
+    <scriptedOperation id="TestHelpers.GetFileExtension">
+       <inputType>void</inputType>
+       <outputType>string</outputType>
+       <category>Scripting</category>
+       <param name="path" type="string"/>
+
+       <script>
+         function run(input, params) {
+           return NxLabs.getFileExtension(params.path);
+         }
+       </script>
+    </scriptedOperation>
+    
+    <scriptedOperation id="TestHelpers.GetBaseName">
+       <inputType>void</inputType>
+       <outputType>string</outputType>
+       <category>Scripting</category>
+       <param name="path" type="string"/>
+
+       <script>
+         function run(input, params) {
+           return NxLabs.getBaseName(params.path);
+         }
+       </script>
+    </scriptedOperation>
+    
+    <scriptedOperation id="TestHelpers.GetUserFullName">
+       <inputType>void</inputType>
+       <outputType>string</outputType>
+       <category>Scripting</category>
+       <param name="userId" type="string"/>
+
+       <script>
+         function run(input, params) {
+           return NxLabs.getUserFullName(params.userId);
+         }
+       </script>
+    </scriptedOperation>
+
+    <!-- For testing Telmplaterendering Automation -->
+    <!-- Automation chain IDs as expected in the template test files-->
+    <scriptedOperation id="javascript.test1">
+       <inputType>document</inputType>
+       <outputType>string</outputType>
+       <category>Scripting</category>
+
+       <script>
+         function run(input, params) {
+           Console.log("\njavascript.test1 called\n");
+           var output = "AUTOMATION RESULT: " + input.title + ", " + input.path + ", " + input["dc:description"];
+           return output;
+         }
+       </script>
+    </scriptedOperation>
+    
+    <scriptedOperation id="javascript.test2">
+       <inputType>document</inputType>
+       <outputType>array</outputType>
+       <category>Scripting</category>
+
+       <script>
+         function run(input, params) {
+           Console.log("\njavascript.test2 called\n");
+           var output =[input.title, input.path, input["dc:description"]];
+           return output;
+         }
+       </script>
+    </scriptedOperation>
+    
+    <scriptedOperation id="javascript.test3">
+       <inputType>document</inputType>
+       <outputType>array</outputType>
+       <category>Scripting</category>
+
+       <script>
+         function run(input, params) {
+           Console.log("\njavascript.test3 called\n");
+           var output =[
+             {"label": "TITLE",       "value": input.title},
+             {"label": "PATH",        "value": input.path},
+             {"label": "DESCRIPTION", "value": input["dc:description"]}];
+           return output;
+         }
+       </script>
+    </scriptedOperation>
+    
+    <scriptedOperation id="javascript.test4">
+       <inputType>document</inputType>
+       <outputType>string</outputType>
+       <category>Scripting</category>
+
+       <script>
+         function run(input, params) {
+           Console.log("\njavascript.test4 called\n");
+           Console.log("automationTemplateParam: " + ctx.automationTemplateParam);
+           
+           // For the unit test, assume a json string that we return as an object
+           var json = JSON.parse(ctx.automationTemplateParam);
+           
+           return json.f1 + ", " + json.f2 + ", " + json.f3;
+         }
+       </script>
+    </scriptedOperation>
+
+  </extension>
+
+</component>

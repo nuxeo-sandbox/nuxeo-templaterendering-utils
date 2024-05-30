@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<component name="nuxeo.labs.utils.template-processor">
+  <!-- Operations -->
+  <extension target="org.nuxeo.template.service.TemplateProcessorComponent" point="contextExtension">
+	<documentation>Allows for calling an automation chain and get its result
+      <ul>
+        <li>labsAutomation.run("chainId", stringParameter)</li>
+      </ul>
+    </documentation>
+
+    <contextFactory name="labsAutomation" class="org.nuxeo.labs.templaterendering.utils.LabsAutomationFactory">
+    </contextFactory>
+  </extension>
+
+</component>
