@@ -2,9 +2,9 @@
 
  
 ## Description
-This plugin contains a utility that adds feature(s) to the [Nuxeo template Rendering](https://doc.nuxeo.com/nxdoc/template-rendering-addon/) addon: It adds an object to the Template Processor Component, `labsAutomation` (just like it already has the `functions`or `Fn` object - cf. the documentation). 
+This plugin contains a utility that adds features to the [Nuxeo template Rendering](https://doc.nuxeo.com/nxdoc/template-rendering-addon/) addon: It adds an object to the Template Processor Component, `labsAutomation` (just like it already has the `functions`or `Fn` object - cf. the documentation). 
 
-This object allows for running an automation chain when rendering the template. It is then possible to return a value based on more or less complex business logic. The main goal is to avoid building complex freemarker expressions and move these to Automation. Typically, `#if`, several concatenations, custom formating, etc.
+This object allows for running an automation chain when rendering the template. It is then possible to return a value based on more or less complex business logic. The main goal is to avoid building complex freemarker expressions and move these to Automation. Typically, `#if`, several concatenations, custom formatting, etc.
 
 > [!IMPORTANT]
 > Please read *Installation Warning* below.
@@ -38,7 +38,7 @@ The chain can return a string or a JS object, or a Java Object, as long as the r
 
 > [!NOTE]
 > * In all the examples below, we just show the expression, not the whole MAILMERGE value as displayed in Word
-> * Also, we show the raw result, of course, without any formating (bold, different fonts, etc.) 
+> * Also, we show the raw result, of course, without any formatting (bold, different fonts, etc.) 
 
 
 #### Return concatenation of values, using conditions
@@ -121,7 +121,7 @@ Related documents:
 ```
 
 
-#### Return an array of objects. Loop in the Word document and display the objects
+#### Return an array of objects. Loop in the Word document and display the objects.
 
 * The `MyChain` automation script:
 
@@ -173,7 +173,7 @@ Related documents:
 ## Installation Warning
 Important: nuxeo-template-rendering plugin must be installed, it does not come as a dependency. This is because the same plugin can be used with both LTS2021 and LTS2023, and we want to avoid deploying the wrong version. So, you must make sur nuxeo-templare-rendering is deployed.
 
-If nuxeo-template-rendering is not installed, you server will not start:
+If nuxeo-template-rendering is not installed, your server will not start:
 
 ```
 ======================================================================
@@ -194,14 +194,14 @@ INFO  [main] [org.nuxeo.osgi.application.loader.FrameworkLoader] Nuxeo Platform 
 
 These solutions are provided for inspiration and we encourage customers to use them as code samples and learning resources.
 
-This is a moving project (no API maintenance, no deprecation process, etc.) If any of these solutions are found to be useful for the Nuxeo Platform in general, they will be integrated directly into platform, not maintained here.
+This is a moving project (no API maintenance, no deprecation process, etc.) If any of these solutions are found to be useful for the Nuxeo Platform in general, they will be integrated directly into the platform, not maintained here.
 
 
 ## Licensing
 
 [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0)
 
-For handling .icl files, this plugin uses a java library, [biweekly](https://github.com/mangstadt/biweekly). Its license is business friendly (use it as you want, with the license disclaimer, see below).
+For handling .icl files, this plugin uses a java library, [biweekly](https://github.com/mangstadt/biweekly). Its license is business-friendly (use it as you want, with the license disclaimer, see below).
 
 
 ## About Nuxeo
