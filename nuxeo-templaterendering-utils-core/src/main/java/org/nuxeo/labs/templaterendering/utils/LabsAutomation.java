@@ -18,9 +18,6 @@
  */
 package org.nuxeo.labs.templaterendering.utils;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import org.nuxeo.ecm.automation.AutomationService;
 import org.nuxeo.ecm.automation.OperationContext;
 import org.nuxeo.ecm.automation.OperationException;

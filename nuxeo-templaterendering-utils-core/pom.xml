@@ -38,5 +38,10 @@
       <artifactId>nuxeo-automation-test</artifactId>
       <scope>test</scope>
     </dependency>
+    <dependency>
+      <groupId>org.nuxeo.ecm.platform</groupId>
+      <artifactId>nuxeo-platform-audit-test</artifactId>
+      <scope>test</scope>
+    </dependency>
   </dependencies>
 </project>

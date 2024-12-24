@@ -23,11 +23,13 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 import java.io.File;
+import java.nio.charset.StandardCharsets;
 
 import jakarta.inject.Inject;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.nuxeo.audit.test.AuditFeature;
 import org.nuxeo.common.utils.FileUtils;
 import org.nuxeo.ecm.automation.AutomationService;
 import org.nuxeo.ecm.automation.context.ContextService;
@@ -55,7 +57,7 @@ import org.nuxeo.template.processors.xdocreport.ZipXmlHelper;
  * 
  */
 @RunWith(FeaturesRunner.class)
-@Features(AutomationFeature.class)
+@Features({AuditFeature.class, AutomationFeature.class})
 @RepositoryConfig(init = DefaultRepositoryInit.class, cleanup = Granularity.METHOD)
 @Deploy("org.nuxeo.labs.templaterendering.utils.nuxeo-templaterendering-utils-core")
 @Deploy("org.nuxeo.template.manager.api")
@@ -84,7 +86,7 @@ public class TestTemplateRenderingAutomation {
 
     // Basic copy paste of org.nuxeo.ecm.platform.template.tests.SimpleTemplateDocTestCase#setupTestDocs
     // templateFile is a local resource file, "TemplateRendering/automation-simple.docx"
-    protected TemplateBasedDocument createTemplateAndTestDoc(String templateFile) throws Exception {
+    protected TemplateBasedDocument createTemplateAndTestDoc(String templateFile) {
 
         DocumentModel root = session.getRootDocument();
         DocumentModel templateDoc = session.createDocumentModel(root.getPathAsString(), "templatedDoc",
@@ -196,7 +198,7 @@ public class TestTemplateRenderingAutomation {
         ConversionService conversionService = Framework.getService(ConversionService.class);
         BlobHolder resultBlob = conversionService.convert("any2text", blobHolder, null);
         String text;
-        text = new String(resultBlob.getBlob().getByteArray(), "UTF-8");
+        text = new String(resultBlob.getBlob().getByteArray(), StandardCharsets.UTF_8);
         
         return text;
     }
