@@ -24,7 +24,7 @@ import static org.junit.Assert.assertTrue;
 
 import java.io.File;
 
-import javax.inject.Inject;
+import jakarta.inject.Inject;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -61,6 +61,7 @@ import org.nuxeo.template.processors.xdocreport.ZipXmlHelper;
 @Deploy("org.nuxeo.template.manager.api")
 @Deploy("org.nuxeo.template.manager")
 @Deploy("org.nuxeo.template.manager.xdocreport")
+@Deploy("org.nuxeo.ecm.platform.audit")
 @Deploy("org.nuxeo.labs.templaterendering.utils.nuxeo-templaterendering-utils-core:automation-scripting-contrib.xml")
 public class TestTemplateRenderingAutomation {
 
